@@ -35,7 +35,7 @@ export const signup = async (req, res) => {
             generateTokenAndSetCookie(newUser._id,res);
             await newUser.save();
             res.status(201).json({
-                message:"Registered Successfully",
+                success:"Registered Successfully",
                 _id:newUser._id,
                 fullName:newUser.fullname,
                 username:newUser.username,
@@ -60,7 +60,7 @@ export const login =async (req, res) => {
         const {username,password}=req.body;
         if(username==="" || password===""){
             return res.status(401).json({
-                message:"Please fill the credentials"
+                error:"Please fill the credentials"
             })
         }
         const user=await User.findOne({username});
@@ -72,7 +72,7 @@ export const login =async (req, res) => {
             if(isPasswordCorrect){
                 generateTokenAndSetCookie(user._id,res);
                 res.status(200).json({
-                    message:"loggedin successfully",
+                    success:"loggedin successfully",
                     _id:user._id,
                     fullname:user.fullname,
                     username:user.username,
@@ -81,7 +81,7 @@ export const login =async (req, res) => {
             }
             else{
                 res.status(401).json({
-                   message:"Password incorrect",
+                   error:"Password incorrect",
                 });
             }
         }
