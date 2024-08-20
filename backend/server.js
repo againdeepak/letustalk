@@ -1,14 +1,14 @@
 
 import express from 'express';
 import dotenv from 'dotenv'
-const app=express();
 const PORT=process.env.PORT || 4000;
-
 import authRoutes from './routes/authRoute.js';
 import messageRoutes from './routes/messageRoute.js'
 import userRoutes from './routes/userRoute.js'
 import cookieParser from 'cookie-parser';
 import connectMongoDb from './db/dbConnection.js';
+import {app,server} from './socket/socket.js'
+
 
 
 
@@ -30,7 +30,7 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     connectMongoDb();
     console.log(`Server is running on ${PORT}`)
 });

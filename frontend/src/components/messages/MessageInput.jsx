@@ -11,7 +11,6 @@ export default function MessageInput() {
     e.preventDefault();
     if (!message) return;
     await sendMessage(message);
-    console.log(setMessage);
     setMessage("");
 
   }

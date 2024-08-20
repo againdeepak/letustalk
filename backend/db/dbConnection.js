@@ -5,7 +5,7 @@ dotenv.config();
 
 const connectMongoDb = async () => {
     try {
-        const mongoUrl = process.env.MONGO_URL;
+        const mongoUrl = process.env.MONGO_ATLAS_URL;
         if (!mongoUrl) {
             throw new Error('Database connection string is missing');
         }
