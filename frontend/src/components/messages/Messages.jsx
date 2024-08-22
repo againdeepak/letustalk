@@ -14,7 +14,7 @@ export default function Messages() {
     }, [messages])
 
     return (
-        <div className='px-4 flex-1 overflow-auto max-h-[500px]'>
+        <div className='messages-container px-4 flex-1 overflow-auto'>
             {!loading && messages.length > 0 && messages.map((message) => (
                 <div key={message._id} ref={lastMessageRef}>
                     <Message message={message} />
@@ -35,20 +35,3 @@ export default function Messages() {
 
 
 
-// import React from 'react'
-// import Message from './Message'
-// export default function Messages() {
-//     return (
-//         <div className='px-4 flex-1 overflow-auto'>
-//             <Message />
-//             <Message />
-//             <Message />
-//             <Message />
-//             <Message />  <Message />
-//             <Message />  <Message />
-//             <Message />  <Message />
-
-//             <Message />
-//         </div>
-//     )
-// }

@@ -4,9 +4,9 @@
 
 
 
-body {
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.png");
 
+body {
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -47,3 +47,17 @@ body {
 
 
 
+@media (max-width:640px) {
+	.messages-container{
+		max-height: 350px;
+		overflow:auto;
+	}
+	.conversations-container{
+		max-height: 120px;
+		margin-top: 10px;
+		overflow:auto;
+	}
+	.no-chat-selected{
+		padding-bottom: 10px;
+	}
+}

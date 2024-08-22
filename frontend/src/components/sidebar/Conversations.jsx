@@ -6,7 +6,7 @@ export default function Conversations() {
   const {loading,conversations}=useGetConversations();
   console.log(conversations);
   return (
-    <div className='py-2 flex flex-col overflow-auto'>
+    <div className='conversations-container py-2 flex flex-col overflow-auto '>
       {
         conversations.map((conversation,idx)=>(
           <Conversation
@@ -24,15 +24,3 @@ export default function Conversations() {
 
 
 
-// import React from 'react'
-// import Conversation from './Conversation'
-// export default function Conversations() {
-//   return (
-//     <div className='py-2 flex flex-col overflow-auto'>
-//       <Conversation/>
-//       <Conversation/>
-      
-
-//     </div>
-//   )
-// }
