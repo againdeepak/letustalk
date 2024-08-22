@@ -18,13 +18,13 @@ export default function MessageInput() {
   return (
     <form className='px-4 my-3' onSubmit={handleSubmit}>
       <div className='w-full relative'>
-        <input type="text" className='border text-sm rounded-lg block w-full p-2.5  border-gray-600 text-white'
+        <input type="text" className='border font-semibold text-pretty rounded-lg block w-full p-2.5  border-gray-600 bg-white text-green-600'
           placeholder='Send a message' 
           value={message} onChange={(e)=>setMessage(e.target.value)}/>
 
         <button type='submit' className='absolute
             inset-y-0 end-0 flex items-center pe-3 '>
-          {loading ? <div className='loading loading-spinner'> </div> : <BiSend />
+          {loading ? <div className='loading loading-spinner bg-green-600'> </div> : <BiSend className='bg-green-500 rounded-lg h-6 w-6 text-red-100' />
           }
         </button>
       </div>
@@ -33,23 +33,3 @@ export default function MessageInput() {
 }
 
 
-
-
-// import React from 'react'
-// import { BiSend } from 'react-icons/bi'
-
-// export default function MessageInput() {
-//   return (
-//     <form className='px-4 my-3'>
-//         <div className='w-full relative'>
-//             <input type="text" className='border text-sm rounded-lg block w-full p-2.5  border-gray-600 text-white'
-//             placeholder='Send a message' />
-
-//             <button type='submit' className='absolute
-//             inset-y-0 end-0 flex items-center pe-3 '>
-//                 <BiSend/>
-//             </button>
-//         </div>
-//     </form>
-//   )
-// }
