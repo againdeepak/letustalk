@@ -43,3 +43,6 @@
    ```bash
    npm run build
    npm start
+
+4. Open your browser and navigate to http://localhost:4000 to see the application in action.
+
